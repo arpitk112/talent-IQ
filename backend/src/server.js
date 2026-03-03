@@ -7,25 +7,18 @@ const app = express();
 
 const __dirname = path.resolve();
 
-// Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Allow CORS in development
 if (ENV.NODE_ENV !== "production") {
     const { default: cors } = await import("cors");
     app.use(cors({ origin: "http://localhost:5173", credentials: true }));
 }
 
-// Health check
 app.get("/health", (req, res) => {
     res.status(200).json({ msg: "api is up and running" })
 })
 
-// ── API routes go here (add them above the static catch-all) ──
-
-
-// Serve React build in production (must be LAST)
 if (ENV.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, "../frontend/dist")))
 
@@ -33,7 +26,6 @@ if (ENV.NODE_ENV === "production") {
         res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"));
     });
 }
-
 
 const startServer = async () => {
     try {
