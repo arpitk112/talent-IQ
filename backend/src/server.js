@@ -1,12 +1,16 @@
 import express from 'express'
 import path from 'path'
+import { serve } from "inngest/express";
+
 import { ENV } from './lib/env.js';
 import { connectDB } from './lib/db.js';
+import { inngest, functions } from "./lib/inngest.js";
 
 const app = express();
 
 const __dirname = path.resolve();
 
+//middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -14,6 +18,8 @@ if (ENV.NODE_ENV !== "production") {
     const { default: cors } = await import("cors");
     app.use(cors({ origin: "http://localhost:5173", credentials: true }));
 }
+
+app.use("/api/inngest", serve({ client: inngest, functions }))
 
 app.get("/health", (req, res) => {
     res.status(200).json({ msg: "api is up and running" })
