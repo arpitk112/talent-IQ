@@ -16,7 +16,7 @@ const syncUser = inngest.createFunction(
         const newUser = {
             clerkId: id,
             name: `${first_name || ""} ${last_name || ""}`,
-            email: email_addresses[0].email_address,
+            email: email_addresses?.[0]?.email_address,
             profileImage: image_url
         }
 
