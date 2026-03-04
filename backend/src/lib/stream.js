@@ -9,7 +9,7 @@ if (!apiKey || !apiSecret) {
     console.log("STREAM_API_KEY or STREAM_API_SECRET is missing");
 }
 
-export const chatClient = StreamChat(apiKey, apiSecret)
+export const chatClient = new StreamChat(apiKey, apiSecret)
 
 export const upsertStreamUser = async (userData) => {
     try {
@@ -29,4 +29,4 @@ export const deleteStreamUser = async (userId) => {
     catch (err) {
         console.error("Error deleting Stream user:", err)
     }
-}
+} 
