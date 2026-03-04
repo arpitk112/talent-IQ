@@ -5,6 +5,8 @@ import { serve } from "inngest/express";
 import { ENV } from './lib/env.js';
 import { connectDB } from './lib/db.js';
 import { inngest, functions } from "./lib/inngest.js";
+import { clerkMiddleware } from '@clerk/express'
+import chatRoutes from "./routes/chatRoutes.js"
 
 const app = express();
 
@@ -13,18 +15,25 @@ const __dirname = path.resolve();
 //middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(clerkMiddleware());
 
 if (ENV.NODE_ENV !== "production") {
     const { default: cors } = await import("cors");
     app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+    //credentials:true ---> server allows a browser to include cookies on request
 }
 
 app.use("/api/inngest", serve({ client: inngest, functions }))
+app.use("/api/chat", chatRoutes)
 
 app.get("/health", (req, res) => {
     res.status(200).json({ msg: "api is up and running" })
 })
 
+
+
+
+//make our app ready for deployment
 if (ENV.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, "../frontend/dist")))
 
