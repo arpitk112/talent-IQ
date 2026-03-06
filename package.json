@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/arpitk112/talent-IQ/issues"
   },
-  "homepage": "https://github.com/arpitk112/talent-IQ#readme"
+  "homepage": "https://github.com/arpitk112/talent-IQ#readme",
+  "dependencies": {
+    "@stream-io/node-sdk": "^0.7.12"
+  }
 }
