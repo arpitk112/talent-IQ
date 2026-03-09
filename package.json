@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/arpitk112/talent-IQ#readme",
   "dependencies": {
-    "@stream-io/node-sdk": "^0.7.12"
+    "@stream-io/node-sdk": "^0.7.12",
+    "lucide-react": "^0.577.0"
   }
 }
