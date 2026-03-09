@@ -9,7 +9,7 @@ function App() {
 
   const { isSignedIn, isLoaded } = useUser();
 
-  // this will get rid of flickering effect
+  // this will get rid of flickering effect..
   if (!isLoaded) return null;
 
   return (
