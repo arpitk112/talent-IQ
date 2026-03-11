@@ -17,6 +17,7 @@
     "axios": "^1.12.2",
     "build": "^0.1.4",
     "canvas-confetti": "^1.9.3",
+    "date-fns": "^4.1.0",
     "npm": "^11.11.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
