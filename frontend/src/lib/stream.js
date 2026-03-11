@@ -4,6 +4,14 @@ const apiKey = import.meta.env.VITE_STREAM_API_KEY;
 
 let client = null;
 
+// Module-level join guard — persists across component remounts and HMR reloads.
+// useRef resets on every unmount so we track joined state here instead.
+let joinedCallId = null;
+
+export const isCallAlreadyJoined = (callId) => joinedCallId === callId;
+export const markCallJoined = (callId) => { joinedCallId = callId; };
+export const clearJoinedCall = () => { joinedCallId = null; };
+
 export const initializeStreamClient = async (user, token) => {
     // if client exists with same user instead of creating again return it
 
