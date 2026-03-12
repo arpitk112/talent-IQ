@@ -97,7 +97,7 @@ function HomePage() {
                             </button>
                         </div>
 
-                        <div className="grid grid-cols-3 gap-8">
+                        {/* <div className="grid grid-cols-3 gap-8">
                             <div className="text-center">
                                 <div className="text-4xl font-bold text-primary">10K+</div>
                                 <div className="text-base-content/70">Interviews Conducted</div>
@@ -110,7 +110,7 @@ function HomePage() {
                                 <div className="text-4xl font-bold text-primary">99%</div>
                                 <div className="text-base-content/70">Uptime</div>
                             </div>
-                        </div>
+                        </div> */}
 
                     </div>
 
