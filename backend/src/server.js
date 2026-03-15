@@ -1,5 +1,6 @@
 import express from 'express'
 import path from 'path'
+import cors from 'cors'
 import { serve } from "inngest/express";
 
 import { ENV } from './lib/env.js';
@@ -21,7 +22,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(clerkMiddleware());
 
 if (ENV.NODE_ENV !== "production") {
-    const { default: cors } = await import("cors");
     app.use(cors({ origin: "http://localhost:5173", credentials: true }));
     //credentials:true ---> server allows a browser to include cookies on request
 }
@@ -35,14 +35,11 @@ app.get("/health", (req, res) => {
     res.status(200).json({ msg: "api is up and running" })
 })
 
-
-
-
 //make our app ready for deployment
 if (ENV.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, "../frontend/dist")))
 
-    app.get("/*", (req, res) => {
+    app.get("*", (req, res) => {
         res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
     });
 }
