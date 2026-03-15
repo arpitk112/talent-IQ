@@ -14,6 +14,7 @@
   "type": "module",
   "dependencies": {
     "@clerk/express": "^1.7.41",
+    "@stream-io/node-sdk": "^0.7.44",
     "cors": "^2.8.6",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
