@@ -90,7 +90,3 @@ npm run dev
 ```
 
 The frontend should boot up, and you can access the app in your browser, usually at `http://localhost:5173`.
-
-## License
-
-ISC
