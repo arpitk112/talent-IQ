@@ -15,4 +15,5 @@ export const ENV = {
     JDOODLE_CLIENT_ID: process.env.JDOODLE_CLIENT_ID,
     JDOODLE_CLIENT_SECRET: process.env.JDOODLE_CLIENT_SECRET,
     GEMINI_API_KEY: process.env.GEMINI_API_KEY,
+    FRONTEND_URL: process.env.FRONTEND_URL,
 }
