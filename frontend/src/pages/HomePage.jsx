@@ -7,6 +7,7 @@ import {
     UsersIcon,
     VideoIcon,
     ZapIcon,
+    FileTextIcon,
 } from "lucide-react";
 import { SignInButton } from "@clerk/clerk-react";
 
@@ -79,6 +80,10 @@ function HomePage() {
                             <div className="badge badge-lg badge-outline">
                                 <CheckIcon className="size-4 text-success" />
                                 Multi-Language
+                            </div>
+                            <div className="badge badge-lg badge-outline badge-secondary">
+                                <SparklesIcon className="size-4 text-secondary" />
+                                AI Resume Builder
                             </div>
                         </div>
 
@@ -171,6 +176,20 @@ function HomePage() {
                             <h3 className="card-title">Easy Collaboration</h3>
                             <p className="text-base-content/70">
                                 Share your screen, discuss solutions, and learn from each other in real-time
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Feature 4 — AI Resume Builder */}
+                    <div className="card bg-base-100 shadow-xl border border-secondary/20">
+                        <div className="card-body items-center text-center">
+                            <div className="size-16 bg-secondary/10 rounded-2xl flex items-center justify-center mb-4">
+                                <FileTextIcon className="size-8 text-secondary" />
+                            </div>
+                            <div className="badge badge-secondary badge-sm mb-1">GenAI Powered</div>
+                            <h3 className="card-title">AI Resume Builder</h3>
+                            <p className="text-base-content/70">
+                                Generate a professional, ATS-friendly resume in seconds using Google Gemini AI
                             </p>
                         </div>
                     </div>
