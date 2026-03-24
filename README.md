@@ -1,5 +1,7 @@
 # Talent-IQ
 
+Demo-link : https://talent-iq-realtime.vercel.app
+
 Welcome to the Talent-IQ project! This is a web application designed to help folks prepare for technical interviews. We built it so users can practice algorithms, run code right in the browser, and even hop into video calls with a chat interface for mock interviews.
 
 We put this together using a modern stack: React on the frontend and an Express/Node backend, with a few key integrations like Clerk for managing users, Stream for the video/chat stuff, Monaco Editor so coding feels like it does in VS Code, and Google Gemini AI for our automated Resume Builder.
