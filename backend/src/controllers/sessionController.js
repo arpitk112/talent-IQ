@@ -59,6 +59,7 @@ export async function getActiveSessions(_, res) {
     try {
         const sessions = await Session.find({ status: "active" })
             .populate("host", "name profileImage email clerkId")
+            .populate("participant", "name profileImage email clerkId")
             .sort({ createdAt: -1 })
             .limit(20)
 
@@ -133,7 +134,7 @@ export async function joinSession(req, res) {
         const userId = req.user._id;
         const clerkId = req.user.clerkId;
 
-        const session = Session.findById(id);
+        const session = await Session.findById(id);
 
         if (!session) return res.status(404).json({ message: "Session not Found" })
 
