@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage.jsx';
 import ProblemPage from './pages/ProblemPage.jsx';
 import ProblemsPage from './pages/ProblemsPage.jsx';
 import SessionPage from './pages/SessionPage.jsx';
+import ResumeBuilderPage from './pages/ResumeBuilderPage.jsx';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
         <Route path='/problems' element={isSignedIn ? <ProblemsPage /> : <Navigate to={"/"} />} />
         <Route path='/problem/:id' element={isSignedIn ? <ProblemPage /> : <Navigate to={"/"} />} />
         <Route path='/session/:id' element={isSignedIn ? <SessionPage /> : <Navigate to={"/"} />} />
+        <Route path='/resume-builder' element={isSignedIn ? <ResumeBuilderPage /> : <Navigate to={"/"} />} />
 
       </Routes>
 

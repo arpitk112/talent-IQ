@@ -10,6 +10,7 @@ import { clerkMiddleware } from '@clerk/express'
 import chatRoutes from "./routes/chatRoutes.js"
 import sessionRoutes from "./routes/sessionRoutes.js"
 import executeRoutes from "./routes/executeRoutes.js"
+import resumeRoutes from "./routes/resumeRoutes.js"
 
 const app = express();
 
@@ -30,6 +31,7 @@ app.use("/api/inngest", serve({ client: inngest, functions }))
 app.use("/api/chat", chatRoutes)
 app.use("/api/sessions", sessionRoutes)
 app.use("/api/execute", executeRoutes)
+app.use("/api/resume", resumeRoutes)
 
 app.get("/health", (req, res) => {
     res.status(200).json({ msg: "api is up and running" })
