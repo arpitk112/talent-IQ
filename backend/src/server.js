@@ -39,6 +39,7 @@ app.use(cors({
         }
     },
     credentials: true,
+    allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 
 app.use("/api/inngest", serve({ client: inngest, functions }))
