@@ -2,7 +2,7 @@
 
 const API_URL = import.meta.env.VITE_API_URL || "/api";
 
-const SUPPORTED_LANGUAGES = ["javascript", "python", "java"];
+const SUPPORTED_LANGUAGES = ["javascript", "python", "java", "cpp"];
 
 /**
  * @param {string} language - programming language

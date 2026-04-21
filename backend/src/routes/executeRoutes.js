@@ -8,6 +8,7 @@ const JDOODLE_LANGUAGES = {
     javascript: { language: "nodejs", versionIndex: "4" },
     python: { language: "python3", versionIndex: "4" },
     java: { language: "java", versionIndex: "4" },
+    cpp: { language: "cpp17", versionIndex: "1" },
 };
 
 router.post("/", async (req, res) => {
